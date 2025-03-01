@@ -4,7 +4,8 @@ git clone https://github.com/calvyngit/Exegol
 cd Exegol
 
 # Ajouter des configurations à tmux.conf
-cat tmux.conf >> ~/.tmux.conf
+cat .tmux.conf >> ~/.tmux.conf
+cat .tmux.conf.local >> ~/.tmux.conf.local
 cat aliases >> /opt/.exegol_aliases
 
 
