@@ -12,6 +12,11 @@ cat aliases >> /opt/.exegol_aliases
 mv ./win/* /opt/resources/windows
 mv ./Linux/* /opt/resources/linux
 mv ./env.sh /opt/tools/Exegol-history/
+mv ./setup_powerlevel10k.sh /workspace
+
+# Exécuter le script setup_powerlevel10k.sh
+chmod +x /workspace/setup_powerlevel10k.sh
+/workspace/setup_powerlevel10k.sh
 
 # Revenir à la racine et supprimer le dossier cloné
 cd ..
@@ -26,15 +31,6 @@ echo "deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-
 
 # Cloner des dépôts supplémentaires
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone https://github.com/romkatv/powerlevel10k.git /root/.oh-my-zsh/custom/themes/powerlevel10k
-
-# Télécharger des scripts spécifiques dans les bons répertoires
-cd /opt/resources/windows
-wget https://raw.githubusercontent.com/calvyngit/Exegol/refs/heads/main/win/winfast.sh
-
-cd /opt/resources/linux
-wget https://raw.githubusercontent.com/calvyngit/Exegol/refs/heads/main/Linux/linfast.sh
-
 
 # Modifications visuelles
 sed -i 's/"#"/"%{$fg[green]%}➜ %{$reset_color%}"/g' /opt/.exegol_shells_rc
