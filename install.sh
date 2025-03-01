@@ -8,7 +8,6 @@ cat .tmux.conf >> ~/.tmux.conf
 cat .tmux.conf.local >> ~/.tmux.conf.local
 cat aliases >> /opt/.exegol_aliases
 
-
 # Déplacer des fichiers et répertoires dans les bons emplacements
 mv ./win/* /opt/resources/windows
 mv ./Linux/* /opt/resources/linux
@@ -18,21 +17,16 @@ mv ./env.sh /opt/tools/Exegol-history/
 cd ..
 rm -rf Exegol
 
-# Installation d'outils supplémentaires
-
-apt install glow
-
 # Modifier la configuration SSH pour autoriser l'authentification par mot de passe
 echo "PermitRootLogin prohibit-password" >> /etc/ssh/sshd_config
 echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 
-# Ajouter des dépôts Debian Jessie
-echo "deb http://ftp.fr.debian.org/debian/ jessie main non-free" >> /etc/apt/sources.list
-echo "deb-src http://ftp.fr.debian.org/debian/ jessie main non-free" >> /etc/apt/sources.list
+# Ajouter des dépôts kali
 echo "deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
 
 # Cloner des dépôts supplémentaires
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
 # Télécharger des scripts spécifiques dans les bons répertoires
 cd /opt/resources/windows
@@ -45,7 +39,7 @@ wget https://raw.githubusercontent.com/calvyngit/Exegol/refs/heads/main/Linux/li
 # Modifications visuelles
 sed -i 's/"#"/"%{$fg[green]%}➜ %{$reset_color%}"/g' /opt/.exegol_shells_rc
 sed -i 's/"%m"/"${HOSTNAME#exegol-}"/g' /opt/.exegol_shells_rc
-sed -i 's/^ZSH_THEME="gentoo"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' "~/.zshrc"
+sed -i 's/^ZSH_THEME="gentoo"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' "/root/.zshrc"
 
 chmod +x /opt/tools/Exegol-history/env.sh
 
