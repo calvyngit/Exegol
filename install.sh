@@ -13,6 +13,7 @@ mv ./win/* /opt/resources/windows
 mv ./Linux/* /opt/resources/linux
 mv ./env.sh /opt/tools/Exegol-history/
 mv ./setup_powerlevel10k.sh /workspace
+mv ./.p10k.zsh ~/
 
 # Exécuter le script setup_powerlevel10k.sh
 chmod +x /workspace/setup_powerlevel10k.sh
@@ -40,4 +41,4 @@ chmod +x /opt/tools/Exegol-history/env.sh
 
 # Supprimer le script d'installation
 rm /workspace/install.sh
-rm /workspace/setup_powershell10.sh
+rm /workspace/setup_powerlevel10k.sh
