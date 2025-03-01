@@ -8,16 +8,8 @@ cat tmux.conf >> ~/.tmux.conf
 cat aliases >> /opt/.exegol_aliases
 cat history >> ~/.zsh_history
 
-# Copier un fichier de mots de passe
-cp /opt/seclists/Passwords/xato-net-10-million-passwords-1000000.txt /opt/bigwl.txt
-
-# Télécharger un fichier de liste de chemins
-wget https://raw.githubusercontent.com/laluka/pypotomux/main/wordlists/path.lst
-
 
 # Déplacer des fichiers et répertoires dans les bons emplacements
-mv ./scan.py /opt/resources/scan.py
-mv ./scrapmap.py /opt/resources/scrapmap.py
 mv ./win/* /opt/resources/windows
 mv ./Linux/* /opt/resources/linux
 mv ./setup.sh /opt
@@ -26,7 +18,7 @@ mv ./settarget.sh /opt/tools/Exegol-history/
 
 # Revenir à la racine et supprimer le dossier cloné
 cd ..
-rm -rf Exegol-Ressources
+rm -rf Exegol
 
 # Installation de paquets Python et systèmes
 cd /tmp
