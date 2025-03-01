@@ -26,7 +26,7 @@ echo "deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-
 
 # Cloner des dépôts supplémentaires
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+git clone https://github.com/romkatv/powerlevel10k.git /root/.oh-my-zsh/custom/themes/powerlevel10k
 
 # Télécharger des scripts spécifiques dans les bons répertoires
 cd /opt/resources/windows
