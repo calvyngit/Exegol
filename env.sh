@@ -53,9 +53,10 @@ mkdir -p "$workspace_dir"
 # Afficher un message de confirmation
 echo "Répertoire créé : $workspace_dir"
 echo "Variables d'environnement définies :"
-echo "HOST_IP=$HOST"
-echo "VICTIM_IP=$TARGET"
+echo "HOST=$HOST"
+echo "TARGET=$TARGET"
 echo "CHALLENGE_NAME=$challenge_name"
+
 
 if [ -n "$DOMAIN" ]; then
     echo "DOMAIN=$DOMAIN"
