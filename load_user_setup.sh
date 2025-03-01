@@ -1,1 +1,0 @@
-wget -qO- https://raw.githubusercontent.com/calvyngit/Exegol/refs/heads/main/install.sh | bash

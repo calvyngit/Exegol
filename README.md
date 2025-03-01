@@ -14,5 +14,5 @@ Afin de définir vos propres variables d'environnement et d'exploiter les comman
 
 ``` /opt/tools/Exegol-history/env.sh ```
 
-Ce script va vous demander de définir l'IP de votre machine hôte (machine attaquante), la machine victime, le domaine(optionnel, remplissez si vous l'avez), un username(optionnel), un mot de passe(optionnel) ou un hash(optionnel).
+Ce script va vous demander de définir l'IP de votre machine hôte (machine attaquante), la machine victime,le nom du challenge/CTF, le domaine(optionnel, remplissez si vous l'avez), un username(optionnel), un mot de passe(optionnel) ou un hash(optionnel). Un répertoire est également crée dans /workspace avec le nom du challenge/CTF. 
 

@@ -35,6 +35,7 @@ echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 # Ajouter des dépôts Debian Jessie
 echo "deb http://ftp.fr.debian.org/debian/ jessie main non-free" >> /etc/apt/sources.list
 echo "deb-src http://ftp.fr.debian.org/debian/ jessie main non-free" >> /etc/apt/sources.list
+cho "deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
 
 # Cloner des dépôts supplémentaires
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
