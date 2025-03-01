@@ -26,8 +26,8 @@ read -p "Veuillez entrer un mot de passe (optionnel, appuyez sur Entrée pour ig
 read -p "Veuillez entrer un hash (optionnel, appuyez sur Entrée pour ignorer) : " HASH
 
 # Exporter les variables comme variables d'environnement
-export HOST_IP="$host_ip"
-export VICTIM_IP="$victim_ip"
+export HOST="$HOST"
+export TARGET="$TARGET"
 export CHALLENGE_NAME="$challenge_name"
 
 if [ -n "$DOMAIN" ]; then
