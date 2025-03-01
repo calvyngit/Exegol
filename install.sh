@@ -18,15 +18,8 @@ mv ./env.sh /opt/tools/Exegol-history/
 cd ..
 rm -rf Exegol
 
-# Installation de paquets Python et systèmes
-cd /tmp
-python3 -m pip install --user uploadserver
-apt install ripgrep
-apt install medusa -y
-pip3 install wsgidav cheroot pyftpdlib
-
 # Installation d'outils supplémentaires
-apt-get install snmp-mibs-downloader ripgrep
+
 apt install glow
 
 # Modifier la configuration SSH pour autoriser l'authentification par mot de passe
@@ -48,11 +41,14 @@ wget https://raw.githubusercontent.com/calvyngit/Exegol/refs/heads/main/win/winf
 cd /opt/resources/linux
 wget https://raw.githubusercontent.com/calvyngit/Exegol/refs/heads/main/Linux/linfast.sh
 
+
 # Modifications visuelles
 sed -i 's/"#"/"%{$fg[green]%}➜ %{$reset_color%}"/g' /opt/.exegol_shells_rc
 sed -i 's/"%m"/"${HOSTNAME#exegol-}"/g' /opt/.exegol_shells_rc
-sed -i 's/(%Z)//g' ~/.zshrc
+sed -i 's/^ZSH_THEME="gentoo"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' "~/.zshrc"
 
 chmod +x /opt/tools/Exegol-history/env.sh
+
+
 # Supprimer le script d'installation
 rm /workspace/install.sh
