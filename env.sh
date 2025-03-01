@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # Demander les informations obligatoires à l'utilisateur
-read -p "Veuillez entrer l'IP de votre machine hôte (machine attaquante) : " host_ip
-while [ -z "$host_ip" ]; do
+read -p "Veuillez entrer l'IP de votre machine hôte (machine attaquante) : " HOST
+while [ -z "$HOST" ]; do
     echo "L'IP de la machine hôte est obligatoire."
-    read -p "Veuillez entrer l'IP de votre machine hôte (machine attaquante) : " host_ip
+    read -p "Veuillez entrer l'IP de votre machine hôte (machine attaquante) : " HOST
 done
 
-read -p "Veuillez entrer l'IP de la machine victime : " victim_ip
-while [ -z "$victim_ip" ]; do
+read -p "Veuillez entrer l'IP de la machine victime : " TARGET
+while [ -z "$TARGET" ]; do
     echo "L'IP de la machine victime est obligatoire."
-    read -p "Veuillez entrer l'IP de la machine victime : " victim_ip
+    read -p "Veuillez entrer l'IP de la machine victime : " TARGET
 done
 
 read -p "Veuillez entrer le nom du challenge/CTF : " challenge_name
@@ -20,42 +20,42 @@ while [ -z "$challenge_name" ]; do
 done
 
 # Demander les informations optionnelles
-read -p "Veuillez entrer le domaine (optionnel, appuyez sur Entrée pour ignorer) : " domain
-read -p "Veuillez entrer un nom d'utilisateur (optionnel, appuyez sur Entrée pour ignorer) : " username
-read -p "Veuillez entrer un mot de passe (optionnel, appuyez sur Entrée pour ignorer) : " password
-read -p "Veuillez entrer un hash (optionnel, appuyez sur Entrée pour ignorer) : " hash
+read -p "Veuillez entrer le domaine (optionnel, appuyez sur Entrée pour ignorer) : " DOMAIN
+read -p "Veuillez entrer un nom d'utilisateur (optionnel, appuyez sur Entrée pour ignorer) : " USERNAME
+read -p "Veuillez entrer un mot de passe (optionnel, appuyez sur Entrée pour ignorer) : " PASSWORD
+read -p "Veuillez entrer un hash (optionnel, appuyez sur Entrée pour ignorer) : " HASH
 
 # Exporter les variables comme variables d'environnement
 export HOST_IP="$host_ip"
 export VICTIM_IP="$victim_ip"
 export CHALLENGE_NAME="$challenge_name"
 
-if [ -n "$domain" ]; then
-    export DOMAIN="$domain"
+if [ -n "$DOMAIN" ]; then
+    export DOMAIN="$DOMAIN"
 fi
 
 if [ -n "$username" ]; then
-    export USERNAME="$username"
+    export USERNAME="$USERNAME"
 fi
 
 if [ -n "$password" ]; then
-    export PASSWORD="$password"
+    export PASSWORD="$PASSWORD"
 fi
 
 if [ -n "$hash" ]; then
-    export HASH="$hash"
+    export HASH="$HASH"
 fi
 
 # Créer un répertoire dans /workspace avec le nom du challenge/CTF
-workspace_dir="/workspace/$CHALLENGE_NAME"
+workspace_dir="/workspace/$challenge_name"
 mkdir -p "$workspace_dir"
 
 # Afficher un message de confirmation
 echo "Répertoire créé : $workspace_dir"
 echo "Variables d'environnement définies :"
-echo "HOST_IP=$HOST_IP"
-echo "VICTIM_IP=$VICTIM_IP"
-echo "CHALLENGE_NAME=$CHALLENGE_NAME"
+echo "HOST_IP=$HOST"
+echo "VICTIM_IP=$TARGET"
+echo "CHALLENGE_NAME=$challenge_name"
 
 if [ -n "$DOMAIN" ]; then
     echo "DOMAIN=$DOMAIN"
