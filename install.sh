@@ -35,10 +35,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # Modifications visuelles
 sed -i 's/"#"/"%{$fg[green]%}➜ %{$reset_color%}"/g' /opt/.exegol_shells_rc
 sed -i 's/"%m"/"${HOSTNAME#exegol-}"/g' /opt/.exegol_shells_rc
-sed -i 's/^ZSH_THEME="gentoo"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' "/root/.zshrc"
 
 chmod +x /opt/tools/Exegol-history/env.sh
 
-
 # Supprimer le script d'installation
 rm /workspace/install.sh
+rm /workspace/setup_powershell10.sh
