@@ -22,7 +22,7 @@ bind -T copy-mode MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xsel --cl
 bind-key -n MouseDown3Pane run "tmux set-buffer \"$(xsel --clipboard --output)\"; tmux paste-buffer"
 
 # Division du terminal en quatre carrés égaux avec Ctrl+b+'
-bind-key "'" split-window -v \; split-window -h \; select-pane -t 0 \; split-window -h
+bind-key "'" split-window -v \; select-pane -t 0 \; split-window -h
 
 # Envoyer 'exit' à la sessions active avec Ctrl+b+x
 bind x run-shell 'tmux list-sessions -F "#{session_name}" | xargs -I {} tmux kill-session -t {}'
