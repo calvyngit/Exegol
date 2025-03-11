@@ -84,4 +84,4 @@ if [ -n "$HASH" ]; then
 fi
 
 # Recharger le fichier de configuration pour appliquer les changements
-source "$config_file"
+source "/root/.zshrc"
