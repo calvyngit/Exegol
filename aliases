@@ -8,5 +8,4 @@ alias winfast='bash /opt/resources/windows/winfast.sh'
 alias linfast='bash /opt/resources/linux/linfast.sh'
 alias responder='responder.py -I eth0 -wFb'
 alias psfast='bash /opt/resources/linux/psfast.sh'
-alias settarget='/opt/tools/Exegol-history/env.sh' 
-
+alias settarget='bash /opt/tools/Exegol-history/env.sh'
