@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # Demander les informations obligatoires à l'utilisateur
 read -p "Veuillez entrer l'IP de votre machine hôte (machine attaquante) : " HOST
@@ -24,6 +24,7 @@ read -p "Veuillez entrer le domaine (optionnel, appuyez sur Entrée pour ignorer
 read -p "Veuillez entrer un nom d'utilisateur (optionnel, appuyez sur Entrée pour ignorer) : " USERNAME
 read -p "Veuillez entrer un mot de passe (optionnel, appuyez sur Entrée pour ignorer) : " PASSWORD
 read -p "Veuillez entrer un hash (optionnel, appuyez sur Entrée pour ignorer) : " HASH
+read -p "Veuillez entrer l'IP du contrôleur de domaine (optionnel, appuyez sur Entrée pour ignorer) : " DC_IP
 
 # Fichier de configuration shell
 config_file="$HOME/.zshrc"
@@ -48,6 +49,10 @@ config_file="$HOME/.zshrc"
 
     if [ -n "$HASH" ]; then
         echo "export HASH=\"$HASH\""
+    fi
+
+    if [ -n "$DC_IP" ]; then
+        echo "export DC_IP=\"$DC_IP\""
     fi
 } >> "$config_file"
 
