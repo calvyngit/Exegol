@@ -55,7 +55,6 @@ printf "\e[32m\e[1mHTTP server launched on http://%s:80\n ( CTRL+C for STOP )" "
 python3 -m http.server 80
 
 # Remove linpeas.sh file when the user stops the web server / Supprimer le fichier linpeas.sh lorsque l'utilisateur arrête le serveur web
-echo -e "\n\e[34mStopping the web server. Removing pspy64 file... / Arrêt du serveur web. Suppression du fichier pspy64...\e[0m"
 echo -e "\e[34mArrêt du serveur web. Suppression du fichier pspy64...\e[0m"
 rm pspy64
 
