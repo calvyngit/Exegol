@@ -23,19 +23,22 @@ chmod +x /workspace/setup_powerlevel10k.sh
 cd ..
 rm -rf Exegol
 
-# Modifier la configuration SSH pour autoriser l'authentification par mot de passe
-echo "PermitRootLogin prohibit-password" >> /etc/ssh/sshd_config
-echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
-
 # Ajouter des dépôts kali
 echo "deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
 
 # Cloner des dépôts supplémentaires
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# Ajouter des outils supplémentaires
+pipx install bbot
+
+
 # Modifications visuelles
 sed -i 's/"#"/"%{$fg[green]%}➜ %{$reset_color%}"/g' /opt/.exegol_shells_rc
 sed -i 's/"%m"/"${HOSTNAME#exegol-}"/g' /opt/.exegol_shells_rc
+
+# Ajout de commande prédéfinie dans zsh_history
+echo "bbot -t $DOMAIN" -p subdomain-enum >> /root/.zsh_history
 
 # Supprimer le script d'installation
 rm /workspace/install.sh

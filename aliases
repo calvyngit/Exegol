@@ -7,5 +7,6 @@ alias pty='echo "python3 -c '\''import pty ; pty.spawn(\"/bin/bash\")'\''" | xcl
 alias winfast='bash /opt/resources/windows/winfast.sh'
 alias linfast='bash /opt/resources/linux/linfast.sh'
 alias responder='responder.py -I eth0 -wFb'
+alias psfast='bash /opt/resources/linux/psfast.sh'
 alias settarget='/opt/tools/Exegol-history/env.sh' 
 
