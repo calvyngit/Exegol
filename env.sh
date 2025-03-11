@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Demander les informations obligatoires à l'utilisateur
 read -p "Veuillez entrer l'IP de votre machine hôte (machine attaquante) : " HOST
@@ -84,4 +84,4 @@ if [ -n "$HASH" ]; then
 fi
 
 # Recharger le fichier de configuration pour appliquer les changements
-source "/root/.zshrc"
+source "$config_file"
