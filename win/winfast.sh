@@ -68,4 +68,4 @@ python3 -m http.server 80
 # Remove winpeas.exe file when the user stops the web server / Supprimer le fichier winpeas.exe lorsque l'utilisateur arrête le serveur web
 echo -e "\n\e[34mStopping the web server. Removing winpeas.exe file... / Arrêt du serveur web. Suppression du fichier winpeas..\e[0m"
 echo -e "\e[34mArrêt du serveur web. Suppression du fichier winpeas...\e[0m"
-rm winpeas.exe
+rm winpeas.exe(1)

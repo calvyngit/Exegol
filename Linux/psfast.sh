@@ -55,5 +55,5 @@ python3 -m http.server 80
 
 # Remove linpeas.sh file when the user stops the web server / Supprimer le fichier linpeas.sh lorsque l'utilisateur arrête le serveur web
 echo -e "\e[34mArrêt du serveur web. Suppression du fichier pspy64...\e[0m"
-rm pspy64
+rm pspy64.1
 
