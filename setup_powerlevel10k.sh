@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Cloner le thème Powerlevel10k dans le répertoire des thèmes personnalisés d'Oh My Zsh
-git clone https://github.com/romkatv/powerlevel10k.git /root/.oh-my-zsh/custom/themes/powerlevel10k
-
 # Vérifier si le clonage a réussi
 if [ $? -ne 0 ]; then
     echo "Erreur lors du clonage du dépôt Powerlevel10k."
@@ -29,3 +26,6 @@ echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> ~/.zshrc
 # Afficher un message de confirmation
 echo "Le thème Zsh a été mis à jour vers Powerlevel10k."
 echo "Vous pouvez recharger votre configuration avec : source ~/.zshrc"
+
+# Supprimer le script
+rm /workspace/setup_powerlevel10k.sh

@@ -35,4 +35,4 @@ sed -i 's/"%m"/"${HOSTNAME#exegol-}"/g' /opt/.exegol_shells_rc
 
 # Supprimer le script d'installation
 rm /workspace/install.sh
-rm /workspace/setup_powerlevel10k.sh
+
