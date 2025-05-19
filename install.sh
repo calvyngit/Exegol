@@ -8,8 +8,6 @@ cat .tmux.conf.local >> ~/.tmux.conf.local
 cat aliases >> /opt/.exegol_aliases
 
 # Déplacer des fichiers et répertoires dans les bons emplacements
-mv ./win/* /opt/resources/windows
-mv ./Linux/* /opt/resources/linux
 mv ./setup_powerlevel10k.sh /workspace
 mv ./.p10k.zsh /root
 
